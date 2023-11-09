@@ -1,0 +1,40 @@
+/* ínicio do projeto DEV-LINKS */
+
+/*global configurations the cascatle sheets*/
+
+
+* {
+
+ /* usado para garantir que as margens e paddings serão respeitadas
+ pelo navegador*/   
+
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+ 
+}
+
+/*pseudo-classe ultilizada para selecionar o elemento raiz do HTML
+ou seja é usado para definir variáveis globais em css, podendo modificar
+todo o comportamento da folha de estilos dependendo da classe selecionada.
+*/
+
+:root{
+
+    --bg-color-url: url(./assets/bg-dark-mode-mobile.jpg);
+    --text-color: white;
+
+}
+
+.light{
+
+    --bg-color-url: url(./assets/bg-light-mode-mobile.jpg);
+    --text-color: white;
+
+}
+
+body{
+
+    background: var(--bg-color-url) no-repeat top center/cover;
+    height: 100%;
+}

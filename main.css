@@ -25,12 +25,16 @@ todo o comportamento da folha de estilos dependendo da classe selecionada.
     --bg-color-url: url(./assets/bg-dark-mode-mobile.png);
     --text-color: white;
 
+    --switch-bg-url: url(./assets/moon-stars.svg)
+
 }
 
 .light{
 
     --bg-color-url: url(./assets/bg-light-mode-mobile.png);
     --text-color: rgb(5, 5, 5);
+
+    --switch-bg-url: url(./assets/sun.svg)
 
 }
 
@@ -159,4 +163,18 @@ footer {
     display:block;
     padding: 10px 0 ;
       
+}
+
+
+/*Switch*/
+
+#switch button{
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    background: white var(--switch-bg-url) no-repeat top center/cover;
+    border: 0px;
+   
+
 }

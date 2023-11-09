@@ -21,14 +21,14 @@ todo o comportamento da folha de estilos dependendo da classe selecionada.
 
 :root{
 
-    --bg-color-url: url(./assets/bg-dark-mode-mobile.jpg);
+    --bg-color-url: url(./assets/bg-dark-mode-mobile.png);
     --text-color: white;
 
 }
 
 .light{
 
-    --bg-color-url: url(./assets/bg-light-mode-mobile.jpg);
+    --bg-color-url: url(./assets/bg-light-mode-mobile.png);
     --text-color: white;
 
 }
@@ -36,5 +36,10 @@ todo o comportamento da folha de estilos dependendo da classe selecionada.
 body{
 
     background: var(--bg-color-url) no-repeat top center/cover;
-    height: 100%;
+
+    /*este comando serve para ajustar a altura de acordo com as medidas
+    de largura e altura da tela asssim nunca ficara sobrando tela em
+    branco*/
+    
+    height: 100vh;
 }

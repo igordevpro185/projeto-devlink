@@ -24,8 +24,10 @@ todo o comportamento da folha de estilos dependendo da classe selecionada.
 
     --bg-color-url: url(./assets/bg-dark-mode-mobile.png);
     --text-color: white;
-
-    --switch-bg-url: url(./assets/moon-stars.svg)
+    --surface-color:rgba(255,255,255,0.1);
+    --stroke-color:rgba(255,255,255,0.5);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --bg-social-color:rgba(255,255,255,0.1);
 
 }
 
@@ -33,8 +35,11 @@ todo o comportamento da folha de estilos dependendo da classe selecionada.
 
     --bg-color-url: url(./assets/bg-light-mode-mobile.png);
     --text-color: rgb(5, 5, 5);
-
-    --switch-bg-url: url(./assets/sun.svg)
+    --surface-color: rgba(169, 122, 223, 0.5);
+    --stroke-color: rgb(5, 5, 5);
+    --switch-bg-url: url(./assets/sun.svg);
+    --bg-social-color: rgba (255,255,255,0.5);
+  
 
 }
 
@@ -108,17 +113,18 @@ ul a{
 
 ul a{
 
-    backdrop-filter : blur(1px);
-    background-color: rgb(255,255,255,0.1);
-    border : 1px solid rgba(255,255,255,0.5);
-    border-radius : 8px   
+    backdrop-filter : blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: var(--surface-color);
+    border : px solid var(--stroke-color);
+    border-radius : 8px ;  
     
   }
 
 
 ul a:hover{
-    background-color: rgba(255,255,255,0.5);
-    border : 1.5px solid rgba(255,255,255,5);
+    background-color: var(--surface-color);
+    border : 1.5px solid var(--stroke-color);
     transition: background 0.2s;
 }
 
@@ -139,10 +145,12 @@ ul a:hover{
     display: inline-flex;
 
     padding: 11px;
+
     border-radius: 50px;
     font-size: 30px;
     text-decoration: none;
     margin-top: 40px;
+    background-color: var(--bg-social-color);
   }
 
 #social-links a:hover{
@@ -150,8 +158,8 @@ ul a:hover{
     display: inline-flex;
     font-size: 30px;
     border-radius: 50px;
-    backdrop-filter : blur(1px);
-    background-color: rgb(255,255,255,0.1);
+    backdrop-filter : blur(4px);
+    background-color: rgba(169, 122, 223, 0.5);
     border : 1px solid rgba(255,255,255,0.5);
     transition: background 0.2s;
           
@@ -166,15 +174,54 @@ footer {
 }
 
 
-/*Switch*/
+/*Switch*  button*/
+
+
+#switch{
+    
+    position: relative;
+    width: 60px;
+    margin: 8px auto;
+}
 
 #switch button{
-
     width: 32px;
     height: 32px;
     border-radius: 50px;
     background: white var(--switch-bg-url) no-repeat top center/cover;
-    border: 0px;
-   
+    position: absolute;
+    z-index: 1;
+    
+    
+    transform: translateY(-10%);
+    
 
 }
+
+.light #switch button {
+
+    left: 55%;
+    right: initial;
+    
+
+}
+
+
+
+
+#switch span{
+    display: inline-block;
+
+    height: 24px;
+    width: 64px;
+    /* surface-color-dark-mode*/
+
+    background:var(--surface-color);
+    /* stroke-color-dark-mode*/
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+
+    -webkit-backdrop-filter: blur(4px);
+}
+
